@@ -72,9 +72,12 @@ function App() {
 		setError(null);
 
 		try {
-			const response = await axios.post<ApiResponse>(config.apiUrl, {
-				tasks: validTasks,
-			});
+			const response = await axios.post<ApiResponse>(
+				config.apiUrl + "/api/plan-tasks",
+				{
+					tasks: validTasks,
+				}
+			);
 			setSchedule(response.data);
 		} catch (err) {
 			setError("Failed to plan tasks. Please try again.");
