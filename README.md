@@ -1,3 +1,5 @@
+The live demo is at https://mudita-frontend.vercel.app/
+
 The backend is https://github.com/andrewcbuensalida/mudita-task-organizer-assignment.git
 
 # Task Planner Application
