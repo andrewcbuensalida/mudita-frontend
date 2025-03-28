@@ -48,3 +48,5 @@ The frontend will be available at `http://localhost:5173`
     -   Vite
 
 
+## To deploy to vercel
+- enter environment variables VITE_API_URL. This comes from after deploying backend to render.com
