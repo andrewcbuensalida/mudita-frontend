@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	Container,
 	Box,
@@ -60,6 +60,14 @@ function App() {
 		const newTasks = tasks.filter((_, i) => i !== index);
 		setTasks(newTasks);
 	};
+
+	useEffect(() => {
+		// warm up the API because deploying on Render.com takes a minute to spin up
+		axios
+			.get(config.apiUrl)
+			.then(() => console.log("API warmed up"))
+			.catch((err) => console.error("Error warming up API", err));
+	}, []);
 
 	const handleSubmit = async () => {
 		const validTasks = tasks.filter((task) => task.trim() !== "");
